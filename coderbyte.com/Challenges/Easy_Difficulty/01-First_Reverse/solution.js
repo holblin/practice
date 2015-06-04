@@ -21,14 +21,14 @@ function FirstReverse_3(str) {
   }
 }
 
-//Sort of dichotomic recursive way
+// Sort of dichotomic recursive way
 function FirstReverse_4(str) {
   var l = str.length, middle = '';
   if(l > 1) {
     if(l%2 == 1) {
       middle = str.charAt(l/2);
     }
-      return FirstReverse_4(str.slice(-l/2)) + middle + FirstReverse_4(str.slice(0, l/2));
+    return FirstReverse_4(str.slice(-l/2)) + middle + FirstReverse_4(str.slice(0, l/2));
   } else {
     return str;
   }

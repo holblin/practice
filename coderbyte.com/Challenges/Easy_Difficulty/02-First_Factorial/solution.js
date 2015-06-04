@@ -13,7 +13,7 @@ function FirstFactorial_2(num) {
     return 1;
   }
   
-  return num * FirstFactorial(num -1);
+  return num * FirstFactorial_2(num -1);
 }
    
 // keep this function call here 

@@ -12,7 +12,7 @@ function ArithGeo(arr) {
   
   last = current;
   current = arr.shift();
-  do {
+  while((is_arith || is_geo) && current != undefined){
     
     if(is_arith && current - last != arith_key) {
       is_arith = false;
@@ -21,9 +21,9 @@ function ArithGeo(arr) {
       is_geo = false;
     }
     
-  	current = arr.shift();
     last = current;
-  } while(!is_arith && !is_geo && last != undefined);
+    current = arr.shift();
+  }
   
   if(is_arith) {
     return 'Arithmetic';
@@ -31,14 +31,9 @@ function ArithGeo(arr) {
     return 'Geometric';
   } else {
     return -1;
-  }      
+  }
 }
 
 // keep this function call here 
 // to see how to enter arguments in JavaScript scroll down
 ArithGeo(readline());
-
-
-1. When the input was (1,2,3,4,5,10,20) your output was incorrect.
-2. When the input was (1,2,3,4,5,6,7,88,2) your output was incorrect.
-3. When the input was (10,110,210,310,410,511) your output was incorrect.
